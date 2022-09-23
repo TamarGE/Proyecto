@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<!--
+    TENGO QUE ARREGLAS LAS H1-6 PARA QUE TENGAN EL TAMAÑO CORRECTO, Y CAMBIARLES
+    EL PADDING PARA QUE NO ESTÉN TAN SEPARADOS LOS TEXTOS ENTRE SÍ. 
+-->
+<body id="inicio">
+    <!--NavBar-->
+    <div class="navbar-fixed">
+        <nav class="teal lighten-3">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo">NOMBRE</a>
+                    <a href="" data-target="mobile-nav" class="sidenav-trigger">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#sobre">Sobre NOMBRE</a></li>
+                        <li><a href="#comentar">Comentar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre">Sobre NOMBRE</a></li>
+        <li><a href="#comentar">Comentar</a></li>
+    </ul>
+    
+<!--Slider/Imágenes-->
+<section class="slider">
+    <ul class="slides">
+      <li>
+        <img src="https://lorempixel.com/580/250/nature/1"> <!-- random image -->
+        <div class="caption center-align">
+          <h2>Información accesible y verificada</h2>
+          <h5 class="light grey-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non reiciendis quaerat perferendis blanditiis animi laborum?</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://lorempixel.com/580/250/nature/2"> <!-- random image -->
+        <div class="caption left-align">
+          <h2>Ejercicios para ayudar con los síntomás</h2>
+          <h5 class="light grey-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores saepe ullam quae et non molestias.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://lorempixel.com/580/250/nature/3"> <!-- random image -->
+        <div class="caption right-align">
+          <h2>¡Nunca está mál necesitar ayuda!</h2>
+          <h5 class="light grey-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum vero excepturi pariatur quos cupiditate voluptatum?</h5>
+        </div>
+      </li>
+    </ul>
+</section>
+
+<!--Buscar-->
+<section id="buscar" class="section section-buscar teal lighten-1 white-text center scrollspy">
+    <div class="container center">
+        <div class="row">
+            <div class="col s12">
+                <h3>Buscar Padecimientos</h3>
+                <div class="input-field center">
+                    <input type="text" class="white grey-text autocomplete" id="autocomplete-input" placeholder="Ansiedad, depreción, etc...">
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+<!--Sobre NOMBRE-->
+<section id="sobre" class="section section-nosotros scrollspy">
+    <div class="container">
+        <div class="row">
+            <h4 class="center">Sobre NOMBRE</h4>
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <h5>¿Qué es NOMBRE?</h5>
+                        <h6>NOMBRE es una página web destinada a brindar información respecto a los distintos padecimientos mentales que existen de forma que esta sea lo más accesible y fácil de comprender posible, incluyendo ejercicos y tips que pueden ayudar a superar y/o convivir con las barreras que presenta cada padecimiento. </h6>
+                        <h5>¿Cómo surgio la página?</h5>
+                        <h6>Esta página comenzo como el proyecto final de 4to año de secundario de dos Alumnas de la escuela Ort, sede Belgrano. Las alumnas se sumaron a la iniciativa “Empatizando”, impulsada por el colegio, queriendo abordar el tema de la falta de información y la desinformación sobre los distintos padecimientos mentales. </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Comentarios-->
+<section id="comentar" class="section section-comentar teal lighten-2 scrollspy">
+    <div class="container">
+        <h3 class="center white-text">¡Dejanos tu Comentario!</h3>
+        <div class="row">
+            <div class="col s12 m4 push-m1">
+                <div class="card-panel center pink lighten-4">
+                    <i class="material-icons">email</i>
+                    <h6>Si vez algo que podríamos mejorar, cambiar, o revisar, dejanos tu comentario!</h6>
+                    <p>Siempre hay cosas para mejorar y cambiar, información que puede estar desactualizada, etc.
+                        Cada comentario será revisado e intentaremos revisar y corregir de acuerdo a sus sugerencias. ¡Gracias por su ayuda!</p>
+                </div>
+            </div>
+            <div class="col s12 m6 right white-text">
+                <h5>Escribe aquí lo que nos quieras decir:</h5>
+                <div class="input-field">
+                    <input type="text" placeholder="Nombre" class="white grey-text autocomplete">
+                </div>
+                <div class="input-field">
+                    <input type="text" placeholder="Email" class="white grey-text autocomplete">
+                </div>
+                <div class="input-field">
+                    <textarea class="materialize-textarea white grey-text" placeholder="Enter Mesage"></textarea>
+                </div>
+                <input type="Submit" value="Enviar" class="btn pink accent-2">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Footer-->
+<footer class="section teal darken-2 white-text">
+<div class="row">
+    <div class="col s8 l4">
+        <h6>NOMBRE</h6>
+    </div>
+    <div class="col s4 right">
+    <p class="flow-text">NOMBRE $copy; 2018</p>
+<!--Flow text hace que el texto sea más responsive, se
+    agranda cuando la pantalla es más grande y achica un 
+    poco cuando la pantalla es más pequeña-->
+</div>
+</div>
+</footer>
+            
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <script>
+        //sidenav
+        const sideNav = document.querySelector('.sidenav');
+        M.Sidenav.init(sideNav,{});
+        //slider
+        const slider = document.querySelector('.slider');
+        M.Slider.init(slider,{
+            indicators: false,
+            height: 500,
+            transition: 500,
+            interval: 6000
+        });
+        //autocomplete
+        const ac = document.querySelector('.autocomplete');
+        M.Autocomplete.init(ac,{
+            data: {
+                "Depresión": null,
+                "Ansiedad": null,
+                "Anorexia": null,
+                "Bipolar": null,
+                "TDAH": null,
+            }});
+        //material boxed
+        const mb = document.querySelector('.materialboxed');
+        M.Materialboxed.init(mb, {});
+        //scrollspy
+        const ss = document.querySelectorAll('.scrollspy');
+        M.Scrollspy.init(ss, {});
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            M.AutoInit();
+        })
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.carousel');
+        var instances = M.Carousel.init(elems,{
+            indicators: true
+        });
+        });
+    </script>
+</body>
+
+</html>
