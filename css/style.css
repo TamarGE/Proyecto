@@ -17,3 +17,7 @@
      width: 100% !important;
  }
 
+ .section-articulo .tabs {
+    background-color: #FFB1B9;
+    color: #0000;
+ }
