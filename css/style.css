@@ -20,7 +20,7 @@
 
  /*Articulo*/
 .section-articulo .tabs .indicator {
-   background-color: #fb163c;
+   background-color: #ec7171;
 }
 
 /*Editor*/
@@ -33,7 +33,7 @@
 .section-administrar textarea{
    padding-left: 5px !important;
    font-size: 18px !important;
-    width: 100% !important;
+   width: 100% !important;
 }
 
 /*LogIn*/
