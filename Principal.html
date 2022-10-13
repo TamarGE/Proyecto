@@ -30,6 +30,7 @@
                     <ul class="right hide-on-med-and-down">
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#sobre">Sobre NOMBRE</a></li>
+                        <li><a href="#recursos">Recursos</a></li>
                         <li><a href="#comentar">Comentar</a></li>
                     </ul>
                 </div>
@@ -39,6 +40,7 @@
     <ul class="sidenav" id="mobile-nav">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#sobre">Sobre NOMBRE</a></li>
+        <li><a href="#recursos">Recursos</a></li>
         <li><a href="#comentar">Comentar</a></li>
     </ul>
     
@@ -70,13 +72,13 @@
 </section>
 
 <!--Buscar-->
-<section id="buscar" class="section section-buscar teal lighten-1 white-text center scrollspy">
+<section id="buscar" class="section section-buscar teal lighten-2 white-text center scrollspy">
     <div class="container center">
         <div class="row">
             <div class="col s12">
                 <h3>Buscar Padecimientos</h3>
                 <div class="input-field center">
-                    <input type="text" class="white grey-text autocomplete" id="autocomplete-input" placeholder="Ansiedad, depreción, etc...">
+                    <input type="text" class="white" id="autocomplete-input" placeholder="Ansiedad, depreción, etc...">
                 </div>
             </div>
         </div>
@@ -87,7 +89,7 @@
 <section id="sobre" class="section section-nosotros scrollspy">
     <div class="container">
         <div class="row">
-            <h4 class="center">Sobre NOMBRE</h4>
+            <h3 class="center">Sobre NOMBRE</h3>
             <div class="col s12">
                 <div class="card">
                     <div class="card-content">
@@ -102,29 +104,56 @@
     </div>
 </section>
 
-<!--Comentarios-->
-<section id="comentar" class="section section-comentar teal lighten-2 scrollspy">
+
+<!--Otros Recursos-->
+<section id="recursos" class="section section-recursos teal lighten-2 center scrollspy">
     <div class="container">
-        <h3 class="center white-text">¡Dejanos tu Comentario!</h3>
+        <div class="row">
+            <h3 class="center white-text">Otros Recursos</h3>
+            <div class="col s6">
+                <div class="card">
+                    <div class="card-content">
+                        <h5><a href="/ImgTerap.html">Imágenes terapéuticas</a></h5>
+                        <p>¡Aprendé más sobre este método terapéutico!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="card">
+                    <div class="card-content">
+                        <h5><a href="/Musica.html">Musica Relajante</a></h5>
+                        <p>¡Escuchá nuestra playlist llena de música para relajarte!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--Comentarios-->
+<section id="comentar" class="section section-comentar scrollspy">
+    <div class="container">
+        <h3 class="center">¡Dejanos tu Comentario!</h3>
         <div class="row">
             <div class="col s12 m4 push-m1">
-                <div class="card-panel center teal lighten-4">
+                <div class="card-panel center red lighten-3">
                     <i class="material-icons">email</i>
                     <h6>Si vez algo que podríamos mejorar, cambiar, o revisar, dejanos tu comentario!</h6>
                     <p>Siempre hay cosas para mejorar y cambiar, información que puede estar desactualizada, etc.
                         Cada comentario será revisado e intentaremos revisar y corregir de acuerdo a sus sugerencias. ¡Gracias por su ayuda!</p>
                 </div>
             </div>
-            <div class="col s12 m6 right white-text">
+            <div class="col s12 m6 right">
                 <h5>Escribe aquí lo que nos quieras decir:</h5>
                 <div class="input-field">
-                    <input type="text" placeholder="Nombre" class="white grey-text autocomplete">
+                    <input type="text" placeholder="Nombre" class="white autocomplete">
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="Email" class="white grey-text autocomplete">
+                    <input type="text" placeholder="Email" class="white autocomplete">
                 </div>
                 <div class="input-field">
-                    <textarea class="materialize-textarea white grey-text" placeholder="Enter Mesage"></textarea>
+                    <textarea class="materialize-textarea white" placeholder="Enter Mesage"></textarea>
                 </div>
                 <input type="Submit" value="Enviar" class="btn red lighten-3 black-text">
             </div>
@@ -163,7 +192,7 @@
             interval: 6000
         });
         //autocomplete
-        const ac = document.querySelector('.autocomplete');
+        /*const ac = document.querySelector('.autocomplete');
         M.Autocomplete.init(ac,{
             data: {
                 "Depresión": null,
@@ -171,7 +200,7 @@
                 "Anorexia": null,
                 "Bipolar": null,
                 "TDAH": null,
-            }});
+            }});*/
         //material boxed
         const mb = document.querySelector('.materialboxed');
         M.Materialboxed.init(mb, {});
