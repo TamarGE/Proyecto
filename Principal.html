@@ -65,7 +65,7 @@
         <img src="https://lorempixel.com/580/250/nature/3"> <!-- random image -->
         <div class="caption right-align">
           <h2>¡Nunca está mál necesitar ayuda!</h2>
-          <h5 class="light grey-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum vero excepturi pariatur quos cupiditate voluptatum?</h5>
+          <h5 class="light grey-text text-lighten-3 hide-on-small-only"></h5>
         </div>
       </li>
     </ul>
@@ -91,7 +91,7 @@
         <div class="row">
             <h3 class="center">Sobre NOMBRE</h3>
             <div class="col s12">
-                <div class="card">
+                <div class="card red lighten-3">
                     <div class="card-content">
                         <h5>¿Qué es NOMBRE?</h5>
                         <h6>NOMBRE es una página web destinada a brindar información respecto a los distintos padecimientos mentales que existen de forma que esta sea lo más accesible y fácil de comprender posible, incluyendo ejercicos y tips que pueden ayudar a superar y/o convivir con las barreras que presenta cada padecimiento. </h6>
@@ -113,16 +113,22 @@
             <div class="col s6">
                 <div class="card">
                     <div class="card-content">
-                        <h5><a href="/ImgTerap.html">Imágenes terapéuticas</a></h5>
+                        <span class="card-title">Imágenes terapéuticas</span>
                         <p>¡Aprendé más sobre este método terapéutico!</p>
+                    </div>
+                    <div class="card-action center-align red lighten-3">
+                        <a class="black-text" href="/ImgTerap.html">VER</a>
                     </div>
                 </div>
             </div>
             <div class="col s6">
                 <div class="card">
                     <div class="card-content">
-                        <h5><a href="/Musica.html">Musica Relajante</a></h5>
-                        <p>¡Escuchá nuestra playlist llena de música para relajarte!</p>
+                        <span class="card-title">Playlist</span>
+                        <p>¡Escuchá nuestras playlist llena de música para relajarte!</p>
+                    </div>
+                    <div class="card-action center-align red lighten-3">
+                        <a class="black-text" href="LinkCanalYoutube">VER</a>
                     </div>
                 </div>
             </div>
@@ -146,6 +152,7 @@
             </div>
             <div class="col s12 m6 right">
                 <h5>Escribe aquí lo que nos quieras decir:</h5>
+                <form action="#archivoconcodigo" method="POST">
                 <div class="input-field">
                     <input type="text" placeholder="Nombre" class="white autocomplete">
                 </div>
@@ -156,6 +163,7 @@
                     <textarea class="materialize-textarea white" placeholder="Enter Mesage"></textarea>
                 </div>
                 <input type="Submit" value="Enviar" class="btn red lighten-3 black-text">
+                </form>
             </div>
         </div>
     </div>
