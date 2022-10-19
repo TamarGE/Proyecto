@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imágenes Terapéuticas</title>
+    <title>Administrador</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -28,38 +28,37 @@
                         <i class="material-icons">menu</i>
                     </a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="/Principal.html">Volver a Inicio</a></li>
+                        <li><a href="../html/Editor.html">Volver a Admin</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
     <ul class="sidenav" id="mobile-nav">
-        <li><a href="/Principal.html">Volver a Inicio</a></li>
+        <li><a href="../html/Editor.html">Volver a Admin</a></li>
     </ul>
 
 <!--Editar/Crear-->
 <section id="administrar" class="section section-administrar">
     <div class="container">
-        <h3 class="text center">Imágenes Terapéuticas</h3>
+        <h3 class="text center">Instrucciones para el Administrador:</h3>
         <div class="rows">
             <div class="col s12">
-                <div class="card">
-                    <div class="card-content">
-                        <h5>¿Qué son?</h5>
-                        <h6>Las imágenes terapéuticas son ...</h6>
-                        <h5>¿Cómo funciona?</h5>
-                        <h6>Primero ....</h6>
-                        <h5><a href="http://">Link</a> a página con imágenes para usar</h5>
-                    </div>
-                </div>
-            </div>       
+                <h5 class="text center">ESTE ES EL PROTOCOLO PARA SUBIR ARTÍCULOS DE LAS CATEGORÍAS “SÍNTOMAS”, “EJERCICIOS” Y “OTROS”.</h5>
+            <br>
+                <h5>El archivo debe ser guardado como .html. Por ejemplo: sintomas.html<br><br>
+                La letra debe estar en tamaño ___.<br><br>
+                La letra debe ser de color negro (#0000).<br><br>
+                Se recomienda mantener una copia de la información de los padecimientos en un documento/carpeta en el ordenador como backup.</h5>
+            </div>
         </div>    
     </div>
 </section>
+<br>
+<br>
 
 <!--Footer-->
-<footer class="section teal darken-2 white-text">
+<footer class="section teal lighten-3 white-text">
 <div class="row">
     <div class="col s8 l4">
         <h6>NOMBRE</h6>
@@ -88,6 +87,16 @@
             transition: 500,
             interval: 6000
         });
+        //autocomplete
+        const ac = document.querySelector('.autocomplete');
+        M.Autocomplete.init(ac,{
+            data: {
+                "Depresión": null,
+                "Ansiedad": null,
+                "Anorexia": null,
+                "Bipolar": null,
+                "TDAH": null,
+            }});
         //material boxed
         const mb = document.querySelector('.materialboxed');
         M.Materialboxed.init(mb, {});

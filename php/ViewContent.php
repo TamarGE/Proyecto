@@ -1,3 +1,7 @@
+<?php
+    require_once('../php/Conectar.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,19 +28,10 @@
             <div class="container">
                 <div class="nav-wrapper">
                     <a href="#" class="brand-logo">NOMBRE</a>
-                    <a href="" data-target="mobile-nav" class="sidenav-trigger">
-                        <i class="material-icons">menu</i>
-                    </a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="/Principal.html">Volver a la Página Principal</a></li>
-                    </ul>
                 </div>
             </div>
         </nav>
     </div>
-    <ul class="sidenav" id="mobile-nav">
-        <li><a href="/Principal.html">Volver a la Página Principal</a></li>
-    </ul>
 
 <!--Artículo-->
 <section id="articulo" class="section section-articulo">
@@ -55,18 +50,48 @@
                 </div>
                 <div class="card-content teal lighten-4">
                     <div id="Sintomas">
-                        Síntomas
-                        <p>Sintomaskfnaepbnpr Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur deleniti repellendus laboriosam ratione molestias sint voluptatem porro quaerat et expedita adipisci asperiores iure rem doloremque dolores a, ad consequuntur quibusdam fugiat fugit eaque blanditiis! Architecto harum ut quaerat iure dolorem.
+                        <?php
+                        $sql = "SELECT * FROM padecimientos where DSpad like '%".$_REQUEST['buscnom']."' AND Categoria = 'Síntomas';";
+                        $excute = mysqli_query($con,$sql);
+                        $Postdata = mysqli_num_rows($excute);
+                        if($Postdata > 0){
+                            while($row = mysqli_fetch_array($excute)){  
+                            $categ = $row['Categoria'];
+                            $texto = $row['Texto'];
+                            echo $row['PadId'];
+                            echo $row['--------------'];?>
+                        <p name="Sin" id="S">
+                        <?php echo $row['Texto'];?>
                         </p>
                      </div>
-                    <div id="Ejercicios">
-                        Ejercicios
-                        <p>Ejerciciosdsdfvknabepn Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt dolor tenetur corrupti beatae similique eos praesentium facilis itaque, voluptatum veniam illo. Quis aut quidem repudiandae impedit natus saepe expedita, sapiente eaque mollitia maiores, vel quos nulla qui odit possimus perferendis!</p>
-                    </div>
-                    <div id="Otros">
-                        Otros
-                        <p>dkvanpvka Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, fugit delectus necessitatibus, libero pariatur sunt sapiente perspiciatis totam expedita eos numquam accusamus architecto iure nam, asperiores sit magnam minima placeat natus illo blanditiis itaque. Expedita blanditiis provident rem eos harum!</p>
-                    </div>
+                    <div name="Eje" id="Ejercicios">
+                        <?php
+                        $sql2 = "SELECT * FROM padecimientos where DSpad like '%".$_REQUEST['buscnom']."' AND Categoria = 'Ejercicios';";
+                        $excute2 = mysqli_query($con,$sql2);
+                        $Postdata2 = mysqli_num_rows($excute2);
+                        if($Postdata2 > 0){
+                            while($row = mysqli_fetch_array($excute2)){  
+                            $categ = $row['Categoria'];
+                            $texto = $row['Texto'];
+                            echo $row['PadId'];
+                            echo $row['--------------'];?>
+                        <p id="E">
+                        <?php echo $row['Texto'];?>
+                        </div>
+                    <div name="Otr" id="Otros">
+                    <?php
+                        $sql2 = "SELECT * FROM padecimientos where DSpad like '%".$_REQUEST['buscnom']."' AND Categoria = 'Otros';";
+                        $excute2 = mysqli_query($con,$sql2);
+                        $Postdata2 = mysqli_num_rows($excute2);
+                        if($Postdata2 > 0){
+                            while($row = mysqli_fetch_array($excute2)){  
+                            $categ = $row['Categoria'];
+                            $texto = $row['Texto'];
+                            echo $row['PadId'];
+                            echo $row['--------------'];?>
+                        <p id="O">
+                        <?php echo $row['Texto'];?>
+                        </div>
                 </div>
             </div>
         </div> 
@@ -74,7 +99,7 @@
 </section>
 
 <!--Footer-->
-<footer class="section teal darken-2 white-text">
+<footer class="section teal lighten-3 white-text">
 <div class="row">
     <div class="col s8 l4">
         <h6>NOMBRE</h6>

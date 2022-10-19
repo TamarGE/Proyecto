@@ -24,16 +24,16 @@
                         <i class="material-icons">menu</i>
                     </a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="/Instrucciones.html">Instrucciones</a></li>
-                        <li><a href="/Comentarios.html">Comentarios</a></li>
+                        <li><a href="../html/Instrucciones.html">Instrucciones</a></li>
+                        <li><a href="../html/Comentarios.html">Comentarios</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
     <ul class="sidenav" id="mobile-nav">
-        <li><a href="/Instrucciones.html">Instrucciones</a></li>
-        <li><a href="/Comentarios.html">Comentarios</a></li>
+        <li><a href="../html/Instrucciones.html">Instrucciones</a></li>
+        <li><a href="../html/Comentarios.html">Comentarios</a></li>
     </ul>
 
 <!--Editar/Crear-->
@@ -51,54 +51,58 @@
                 </div>
                 <div class="card-content teal lighten-4">
                     <div id="Crear">
-                        <div>
+                        <form action="" method="POST">
                             <h5>Padecimento</h5>
                             <div class="input-field">
-                                <input type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
+                                <input name="Nom" type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
                             </div>
                             <h5>Características</h5>
                             <div class="input-field">
-                                <input type="text" placeholder="Palabras características del Padecimiento" class="white grey-text autocomplete">
+                                <input name="Char" type="text" placeholder="Palabras características del Padecimiento" class="white grey-text autocomplete">
                             </div>
                             <h5>Síntomas</h5>
                             <div class="input-field">
-                                <textarea id="text_editor1" class="materialize-textarea white grey-text" placeholder="Ingrese los síntomas"></textarea>
+                                <textarea name="CS" id="text_editor1" class="materialize-textarea white grey-text" placeholder="Ingrese los síntomas"></textarea>
                             </div>
                             <h5>Ejercicios</h5>
                             <div class="input-field">
-                                <textarea id="text_editor2" class="materialize-textarea white grey-text" placeholder="Ingrese los ejercicios"></textarea>
+                                <textarea name="CE" id="text_editor2" class="materialize-textarea white grey-text" placeholder="Ingrese los ejercicios"></textarea>
                             </div>
                             <h5>Otros</h5>
                             <div class="input-field">
-                                <textarea id="text_editor3" class="materialize-textarea white grey-text" placeholder="Ingrese otros"></textarea>
+                                <textarea name="CO" id="text_editor3" class="materialize-textarea white grey-text" placeholder="Ingrese otros"></textarea>
                             </div>
                             <input type="Submit" value="Guardar" class="btn red lighten-3 black-text">
-                        </div>
+                        </form>
                      </div>
                     <div id="Editar">
-                        <div>
-                            <h5>Buscar Padecimento</h5>
+                        <h5>Buscar Padecimento</h5> 
+                        <div class="input-field">
+                                <input id="buscnom" type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
+                            </div> 
+                        <from action="../php/editar.php" method="POST">
+                            <h5>Nombre Padecimento</h5>
                             <div class="input-field">
-                                <input type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
+                                <input id="buscnom" type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
                             </div>
                             <h5>Características</h5>
                             <div class="input-field">
                                 <input type="text" value="Palabras características del Padecimiento" class="white grey-text autocomplete">
                             </div>
-                            <h5><a href="/RevisarSint.html">Síntomas</a></h5>
+                            <h5><a target="_blank" href="../html/ViewContent.html">Síntomas</a></h5>
                             <div class="input-field">
                                 <textarea id="text_editor4" class="materialize-textarea white grey-text" aria-valuetext="Ingrese los síntomas"></textarea>
                             </div>
-                            <h5><a href="/RevisarEj.html">Ejercicios</a></h5>
+                            <h5><a target="_blank" href="../html/ViewContent.html">Ejercicios</a></h5>
                             <div class="input-field">
                                 <textarea id="text_editor5" class="materialize-textarea white grey-text" value="Ingrese los ejercicios"></textarea>
                             </div>
-                            <h5><a href="/RevisarOt.html">Otros</a></h5>
+                            <h5><a target="_blank" href="../html/ViewContent.html">Otros</a></h5>
                             <div class="input-field">
                                 <textarea id="text_editor6" class="materialize-textarea white grey-text" value="Ingrese otros siubissiudvIuabsdVO UAWBDVO9U"></textarea>
                             </div>
                             <input type="Submit" value="Guardar" class="btn pink accent-2">
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

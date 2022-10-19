@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador</title>
+    <title>Log In Admin</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Conexión al js -->
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script src="../js/Admin.js"></script>
 </head>
-<!--
-    TENGO QUE ARREGLAS LAS H1-6 PARA QUE TENGAN EL TAMAÑO CORRECTO, Y CAMBIARLES
-    EL PADDING PARA QUE NO ESTÉN TAN SEPARADOS LOS TEXTOS ENTRE SÍ. 
--->
 <body id="inicio">
     <!--NavBar-->
     <div class="navbar-fixed">
@@ -28,28 +28,46 @@
                         <i class="material-icons">menu</i>
                     </a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="/Editor.html">Volver a Admin</a></li>
+                        <li><a href="../html/Principal.html">Volver al Inicio</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
     <ul class="sidenav" id="mobile-nav">
-        <li><a href="/Editor.html">Volver a Admin</a></li>
+        <li><a href="../html/Principal.html">Volver al Inicio</a></li>
     </ul>
 
-<!--Ver Mensajes-->
-<section id="comentarios" class="section section-comentarios">
+<!--Log in Form-->
+<section id="login" class="section section-login">
     <div class="container">
-        <h3 class="text center">Comentarios</h3>
-        <div class="rows">
+        <div class="row">
+            <h4 class="center">Log In Administrador</h4>
             <div class="col s12">
-            
+                <div class="card teal lighten-4">
+                    <div class="card-content">
+                        <form action="../php/Validadmin.php">
+                        <div class="input-field">
+                            <input id="u" name="usu" type="text" placeholder="Nombre" class="white grey-text">
+                        </div>
+                        <div class="input-field">
+                            <input id="p" name="pass" type="password" placeholder="Contraseña" class="white grey-text">
+                        </div>
+                        <input id="E" type="Submit" value="Ingresar" class="btn red lighten-3">
+                        <span id="O" for="#E" class="nope"></span>
+                    </form>
+                    </div>
+                </div>
             </div>
-        </div>    
+        </div>
     </div>
 </section>
-
+<!--
+    <input id="u" name="usu" type="text" class="caja"/><br><br>
+		<label id="2" class="caja">Contrasenia</label>
+		<input id="p" name="pass" type="password" class="caja"/><br>
+		<button id="E" class="boton">Enviar</button>
+-->
 <!--Footer-->
 <footer class="section teal lighten-3 white-text">
 <div class="row">
@@ -80,6 +98,16 @@
             transition: 500,
             interval: 6000
         });
+        //autocomplete
+        const ac = document.querySelector('.autocomplete');
+        M.Autocomplete.init(ac,{
+            data: {
+                "Depresión": null,
+                "Ansiedad": null,
+                "Anorexia": null,
+                "Bipolar": null,
+                "TDAH": null,
+            }});
         //material boxed
         const mb = document.querySelector('.materialboxed');
         M.Materialboxed.init(mb, {});

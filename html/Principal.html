@@ -12,6 +12,17 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/style.css">
+   <!-- <script>
+        function passvalue (){
+            var nompad=document.getElementById("autocomplete-input").value;
+            localStorage.setItem("textvalue",nompad);
+            return false;
+        }
+    </script> -->
+
+    <!-- Conexión al js -->
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script src="../js/BuscarPad.js"></script>
 </head>
 <!--
     TENGO QUE ARREGLAS LAS H1-6 PARA QUE TENGAN EL TAMAÑO CORRECTO, Y CAMBIARLES
@@ -77,9 +88,11 @@
         <div class="row">
             <div class="col s12">
                 <h3>Buscar Padecimientos</h3>
+                <form action="../php/BuscarPad.php" method="POST">
                 <div class="input-field center">
                     <input type="text" class="white" id="autocomplete-input" placeholder="Ansiedad, depreción, etc...">
                 </div>
+            </form>
             </div>
         </div>
     </div>
@@ -117,7 +130,7 @@
                         <p>¡Aprendé más sobre este método terapéutico!</p>
                     </div>
                     <div class="card-action center-align red lighten-3">
-                        <a class="black-text" href="/ImgTerap.html">VER</a>
+                        <a class="black-text" href="../html/ImgTerap.html">VER</a>
                     </div>
                 </div>
             </div>
@@ -128,7 +141,7 @@
                         <p>¡Escuchá nuestras playlist llena de música para relajarte!</p>
                     </div>
                     <div class="card-action center-align red lighten-3">
-                        <a class="black-text" href="LinkCanalYoutube">VER</a>
+                        <a class="black-text" href="https://youtube.com/channel/UCTs2mrt8fgsgsp8XprPTZDQ">VER</a>
                     </div>
                 </div>
             </div>
@@ -152,17 +165,17 @@
             </div>
             <div class="col s12 m6 right">
                 <h5>Escribe aquí lo que nos quieras decir:</h5>
-                <form action="#archivoconcodigo" method="POST">
+                <form action="../php/SubirComentario.php" method="POST">
                 <div class="input-field">
-                    <input type="text" placeholder="Nombre" class="white autocomplete">
+                    <input name="NomCom" type="text" placeholder="Nombre" class="white autocomplete">
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="Email" class="white autocomplete">
+                    <input name="MailCom" type="text" placeholder="Email" class="white autocomplete">
                 </div>
                 <div class="input-field">
-                    <textarea class="materialize-textarea white" placeholder="Enter Mesage"></textarea>
+                    <textarea name="ComCom" class="materialize-textarea white" placeholder="Enter Mesage"></textarea>
                 </div>
-                <input type="Submit" value="Enviar" class="btn red lighten-3 black-text">
+                <input name="submit_com" type="Submit" value="Enviar" class="btn red lighten-3 black-text">
                 </form>
             </div>
         </div>
