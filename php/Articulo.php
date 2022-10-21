@@ -75,7 +75,7 @@ $data=array();
                 <div class="card-content teal lighten-4">
                     <div id="Sintomas">
                         Síntomas
-                        <p id="S">
+                        <p id="s">
                         <?php
                         
                         ?>
@@ -83,7 +83,7 @@ $data=array();
                      </div>
                     <div id="Ejercicios">
                         Ejercicios
-                        <p id="E">
+                        <p id="e">
                         <?php
                         $sql2="Select * from detalles_padecimiento where IDpad like '%".$_REQUEST['pad']."' AND categoria=ejercicios;";
                         $otro = $con->query($sql2);
@@ -93,7 +93,6 @@ $data=array();
                         }
                         ?>
                         </div>
-                    
             </div>
         </div> 
     </div>
