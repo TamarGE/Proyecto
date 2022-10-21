@@ -60,7 +60,7 @@
                         }
                         $data=array();
 
-                            $sql="Select * from comentarios ORDER BY Nombre;";
+                            $sql='SELECT DISTINCT Nombre, Mail, Comentario from comentarios ORDER BY Nombre;';
                             $query = mysqli_query($con, $sql);
 
                             while($result = mysqli_fetch_array($query)){

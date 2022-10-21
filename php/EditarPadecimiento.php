@@ -1,11 +1,12 @@
 <?php
 
 if(isset($_POST['buscnom'])){
-    require_once('../php/Conectar.php');
-    $nombre = mysqli_real_escape_string($con, $_POST['nomedit']);
-    $sinto = mysqli_real_escape_string($con, $_POST['SintTxt']);
-    $ejerc = mysqli_real_escape_string($con, $_POST['EjerTxt']);
-    $otros = mysqli_real_escape_string($con, $_POST['OtroTxt']);
+$con = new mysqli("localhost", "root", "rootroot");
+mysqli_select_db($con, "proyecto_2022");
+
+if($con->connect_error){
+	die("Connection failed: " . $con->connect_error);
+}
 //Tengo que cambiar todas las sentencias por UPDATE y ajustar el código a eso
     if(!empty($nombre) || !empty($sinto) || !empty($ejerc) || !empty($otros)){
 

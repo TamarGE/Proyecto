@@ -50,7 +50,7 @@
                 <div class="card-content teal lighten-4">
                     <div id="Sintomas">
                         <?php
-                        $sql = "SELECT * FROM padecimientos where DSpad like '%".$_REQUEST['buscnom']."' AND Categoria = 'Síntomas';";
+                        $sql = "SELECT Distinct * FROM padecimientos where DSpad like '%".$_REQUEST['buscnom']."' AND Categoria = 'Síntomas';";
                         $excute = mysqli_query($con,$sql);
                         $Postdata = mysqli_num_rows($excute);
                         if($Postdata > 0){

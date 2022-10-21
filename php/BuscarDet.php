@@ -16,27 +16,19 @@ while($row = mysqli_fetch_assoc($nom)){
 }
 
 
-$sql1="Select * from detalles_padecimiento where IDpad like '%".$_REQUEST['pad']."' AND categoria=sintomas;";
+$sql1="Select * from detalles_padecimiento where IDpad like '%".$_REQUEST['pad']."' AND categoria='sintomas';";
 $sint = $con->query($sql1);
 
 while($row = mysqli_fetch_assoc($sint)){
 	echo $row["texto"];
 }
 
-$sql2="Select * from detalles_padecimiento where IDpad like '%".$_REQUEST['pad']."' AND categoria=ejercicios;";
+$sql2="Select * from detalles_padecimiento where IDpad like '%".$_REQUEST['pad']."' AND categoria='ejercicios';";
 $otro = $con->query($sql2);
 
 while($row = mysqli_fetch_assoc($otro)){
 	echo $row["texto"];
 }
-
-$sql3="Select * from detalles_padecimiento where IDpad like '%".$_REQUEST['pad']."' AND categoria=otros;";
-$sint = $con->query($sql3);
-
-while($row = mysqli_fetch_assoc($sint)){
-	echo $row["texto"];
-}
-
 
 echo json_encode($data);
 
