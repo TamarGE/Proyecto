@@ -44,7 +44,6 @@
                     <ul class="tabs tabs-fixed-width">
                         <li class="tab red lighten-3" ><a href="#Sintomas" class="black-text">Síntomas</a></li>
                         <li class="tab red lighten-3"><a href="#Ejercicios" class="black-text">Ejercicios</a></li>
-                        <li class="tab red lighten-3"><a href="#Otros" class="black-text">Otros</a></li>
                     </ul>
                     <!--active es el que se va a ver al principio. Si no se pone un active, por default el primero va a ser el que se vea-->
                 </div>
@@ -77,21 +76,7 @@
                             echo $row['--------------'];?>
                         <p id="E">
                         <?php echo $row['Texto'];?>
-                        </div>
-                    <div name="Otr" id="Otros">
-                    <?php
-                        $sql2 = "SELECT * FROM padecimientos where DSpad like '%".$_REQUEST['buscnom']."' AND Categoria = 'Otros';";
-                        $excute2 = mysqli_query($con,$sql2);
-                        $Postdata2 = mysqli_num_rows($excute2);
-                        if($Postdata2 > 0){
-                            while($row = mysqli_fetch_array($excute2)){  
-                            $categ = $row['Categoria'];
-                            $texto = $row['Texto'];
-                            echo $row['PadId'];
-                            echo $row['--------------'];?>
-                        <p id="O">
-                        <?php echo $row['Texto'];?>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div> 

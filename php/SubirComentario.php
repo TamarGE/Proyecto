@@ -1,36 +1,28 @@
 <?php
+$con = new mysqli("localhost", "root", "rootroot");
+mysqli_select_db($con, "proyecto_2022");
 
-if(isset($_POST['submit_com'])){
-    require_once('../php/Conectar.php');
-    $nombre = mysqli_real_escape_string($con, $_POST['NomCom']);
-    $mail = mysqli_real_escape_string($con, $_POST['MailCom']);
-    $coment = mysqli_real_escape_string($con, $_POST['ComCom']);
-
-    if(!empty($nombre) || !empty($mail) || !empty($coment)){
-
-        $sql = "INSERT INTO Comentarios (Nombre,Mail,Texto) VALUES('$nombre','$mail','$coment');";
-        $excute = mysqli_query($con,$sql);
-
-        if(!$excute){
-            echo "Failed to submit the data";
-            exit();
-        }else{
-            header('refresh:5; url=dashboard.php');
-            echo "Article Published succesfully";
-            exit();
-        }
-
-
-    }else{
-        header('Location: dashboard.php?emptyField');
-        exit();
-    }
-
-}else{
-    header('Location: dashboard.php?invalidRequest');
-    exit();
+if($con->connect_error){
+	die("Connection failed: " . $con->connect_error);
 }
 
+    if(!empty('nom') || !empty('mail') || !empty('com')){
+
+        $sql = "INSERT INTO Comentarios (Nombre,Mail,Comentario) VALUES('$_POST[nom]','$_POST[mail]','$_POST[com]');";
+        $excute = mysqli_query($con,$sql);
+    }
+if (!mysqli_query($con,$sql)) { 
+    die('Error: ' . mysql_error());
+ }
+
+ if(!$excute){
+    echo "No se pudo publicar el comentario";
+    exit();
+}else{
+    header('refresh:5; url=../html/Principal.html');
+    echo "Comentario Publicado";
+    exit();
+}
 
 
 ?>

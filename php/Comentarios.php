@@ -65,15 +65,18 @@
 
                             while($result = mysqli_fetch_array($query)){
                                 echo "<tr>
-                                    <td>".$result.['Nombre']."</td>
-                                    <td>".$result.['Mail']."</td>
-                                    <td>".$result.['Comentario']."</td>
+                                    <td>".$result['Nombre']."</td>
+                                    <td>".$result['Mail']."</td>
+                                    <td>".$result['Comentario']."</td>
                                 </tr>";
                             }
 
                         $con->close();
                     ?>
                         <script src="../php/TablaComentarios.php"></script>
+                    <!--
+                    -->
+                    
                     </tbody>
                 </table>
             </div>

@@ -23,7 +23,7 @@ if(isset($_POST['buscnom'])){
             exit();
             //tengo que cambiar el url.
         }else{
-            header('refresh:5; url=dashboard.php');
+            header('refresh:5; url=../html/Editor.html');
             echo "Article Published succesfully";
             exit();
         }
