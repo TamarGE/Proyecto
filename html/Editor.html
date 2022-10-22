@@ -76,11 +76,12 @@
                         <h5>Buscar Padecimento</h5> 
                         <div class="input-field">
                                 <input id="buscnom" type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
+                            <label type="hiden" name="pad" id="1"></label>
                             </div> 
                         <from action="../php/editar.php" method="POST">
                             <h5>Nombre Padecimento</h5>
                             <div class="input-field">
-                                <input id="nomedit" type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
+                                <input name="nom" id="nomedit" type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
                             </div>
                            <!-- <h5>Características</h5>
                             <div class="input-field">
@@ -88,11 +89,11 @@
                             </div>-->
                             <h5><a target="_blank" href="../html/ViewContent.html">Síntomas</a></h5>
                             <div class="input-field">
-                                <textarea id="SintTxt" class="materialize-textarea white grey-text" aria-valuetext="Ingrese los síntomas"></textarea>
+                                <textarea name="sint" id="SintTxt" class="materialize-textarea white grey-text" aria-valuetext="Ingrese los síntomas"></textarea>
                             </div>
                             <h5><a target="_blank" href="../html/ViewContent.html">Ejercicios</a></h5>
                             <div class="input-field">
-                                <textarea id="EjerTxt" class="materialize-textarea white grey-text" value="Ingrese los ejercicios"></textarea>
+                                <textarea name="ejer" id="EjerTxt" class="materialize-textarea white grey-text" value="Ingrese los ejercicios"></textarea>
                             </div>
                             <input type="Submit" value="Guardar" class="btn red lighten-3 black-text">
                         </form>
