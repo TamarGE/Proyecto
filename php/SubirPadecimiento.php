@@ -1,4 +1,32 @@
 <?php
+$con = new mysqli("localhost", "root", "rootroot");
+mysqli_select_db($con, "proyecto_2022");
+
+if($con->connect_error){
+	die("Connection failed: " . $con->connect_error);
+}
+
+    if(!empty('Cnom') || !empty('Csin') || !empty('Ceje')){
+
+        $sql = "INSERT INTO Padecimientos (Nombre,Sintomas,Ejercicios) VALUES('$_POST[Cnom]','$_POST[Csin]','$_POST[Ceje]');";
+        $excute = mysqli_query($con,$sql);
+    }
+if (!mysqli_query($con,$sql)) { 
+    die('Error: ' . mysql_error());
+ }
+ if(!$excute){
+    echo "No se pudo guardar el padecimiento";
+    exit();
+}else{
+    header('refresh:5; url=../html/Principal.html');
+    echo "Padecimiento Publicado";
+    exit();
+}
+
+
+?>
+
+<?php/*
 
 if(isset($_POST['submit_pad'])){
     require_once('../php/Conectar.php');
@@ -36,6 +64,6 @@ if(isset($_POST['submit_pad'])){
     exit();
 }
 
-
+*/
 
 ?>

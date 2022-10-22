@@ -3,12 +3,12 @@ $(document).ready(function(){
 $("#O").hide();
 
 // conexión con la db
-$("#S").click(function(){
+$("#E").click(function(){
 	$.ajax({
 		type:'POST',
-		url: '../php/SubirPadecimiento.php',
+		url: '../php/EditarPadecimiento.php',
 		dataType: "json",
-		data: 'Cnom=' + $("#n").val() + 'Csin=' + $("#s").val() + '&Ceje=' + $("#e").val(),
+		data: 'nom=' + $("#EN").val() + 'sint=' + $("#ES").val() + '&ejer=' + $("#EJ").val(),
 		success: function (datos) {
 			if(datos.status == 'ok'){
 				window.location = "../html/Editor.html";/*

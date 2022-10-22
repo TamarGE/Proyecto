@@ -51,10 +51,10 @@
                 </div>
                 <div class="card-content teal lighten-4">
                     <div id="Crear">
-                        <form action="" method="POST">
+                        <form action="../php/SubirPadecimiento.php" method="POST">
                             <h5>Padecimento</h5>
                             <div class="input-field">
-                                <input name="Nom" type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
+                                <input name="Cnom" id="CN" type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
                             </div>
                             <!--
                             <h5>Características</h5>
@@ -63,13 +63,13 @@
                             </div>-->
                             <h5>Síntomas</h5>
                             <div class="input-field">
-                                <textarea name="CS" id="text_editor1" class="materialize-textarea white grey-text" placeholder="Ingrese los síntomas"></textarea>
+                                <textarea name="Csin" id="CS" class="materialize-textarea white grey-text" placeholder="Ingrese los síntomas"></textarea>
                             </div>
                             <h5>Ejercicios</h5>
                             <div class="input-field">
-                                <textarea name="CE" id="text_editor2" class="materialize-textarea white grey-text" placeholder="Ingrese los ejercicios"></textarea>
+                                <textarea name="Ceje" id="CE" class="materialize-textarea white grey-text" placeholder="Ingrese los ejercicios"></textarea>
                             </div>
-                            <input type="Submit" value="Guardar" class="btn red lighten-3 black-text">
+                            <input type="Submit" id="S" value="Guardar" class="btn red lighten-3 black-text">
                         </form>
                      </div>
                     <div id="Editar">
@@ -81,7 +81,7 @@
                         <from action="../php/editar.php" method="POST">
                             <h5>Nombre Padecimento</h5>
                             <div class="input-field">
-                                <input name="nom" id="nomedit" type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
+                                <input name="nom" id="EN" type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
                             </div>
                            <!-- <h5>Características</h5>
                             <div class="input-field">
@@ -89,13 +89,13 @@
                             </div>-->
                             <h5><a target="_blank" href="../html/ViewContent.html">Síntomas</a></h5>
                             <div class="input-field">
-                                <textarea name="sint" id="SintTxt" class="materialize-textarea white grey-text" aria-valuetext="Ingrese los síntomas"></textarea>
+                                <textarea name="sint" id="ES" class="materialize-textarea white grey-text" aria-valuetext="Ingrese los síntomas"></textarea>
                             </div>
                             <h5><a target="_blank" href="../html/ViewContent.html">Ejercicios</a></h5>
                             <div class="input-field">
-                                <textarea name="ejer" id="EjerTxt" class="materialize-textarea white grey-text" value="Ingrese los ejercicios"></textarea>
+                                <textarea name="ejer" id="EJ" class="materialize-textarea white grey-text" value="Ingrese los ejercicios"></textarea>
                             </div>
-                            <input type="Submit" value="Guardar" class="btn red lighten-3 black-text">
+                            <input type="Submit" id="E" value="Guardar" class="btn red lighten-3 black-text">
                         </form>
                     </div>
                 </div>
