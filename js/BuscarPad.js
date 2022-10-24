@@ -9,7 +9,7 @@ $("#E").click(function(){
 		data: '=' + $("#autocomplete-input").val(),
 		success: function (datos) {
 			if(datos.status == 'ok'){
-				window.location = "../html/Principal.html";
+				window.location = "";
 			}else{
 				mensaje="Usuario no encontrado ";
 				$("#O").show();//revisar esto, como hacer para que maparezca una alerta o algo para no poner un label

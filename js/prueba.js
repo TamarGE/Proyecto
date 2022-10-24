@@ -1,6 +1,8 @@
 $(document).ready(function(){
-
-$("#pade").autocomplete({
+/*videos para mirar para hacer que aparezca el texto buscado en otra página:
+https://www.youtube.com/watch?v=V5ChXF2Ps9o --> está en hindú.
+*/
+$("#autocomplete-input").autocomplete({
   source: function( request, response ) {
          // Fetch data
            $.ajax({
@@ -37,18 +39,21 @@ $("#pade").autocomplete({
 
 
 function BuscarDescrip (pade){
-  $("#detalles").html("");
+  $("#sintomas").html("");
     //alert (pade);
     $.ajax({
       type: 'POST',
-      url: 'buscadetalle.php',
+      url: '../php/buscadetalle.php',
       dataType: "json",
-      data: 'IDPad=' + pade +'',
+      data: 'IDPad=' + autocomplete_input +'',
       success: function (data) {
         //alert (data);
+        if(datos.status == 'ok'){
+          window.location = "../html/Articulo(NO).html";
+        }
         $.each(data,function(i,v){
           //alert (v.label);
-          $("#detalles").html(v.label);
+          $("#s").html(v.label);
         });
       },
       error: function(error) {
