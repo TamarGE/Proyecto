@@ -10,7 +10,7 @@ $("#autocomplete-input").autocomplete({
             type: 'POST',
             dataType: "json",
             data: {
-             pad: request.term
+              pad: request.term
             },
             success: function( data ) {
              response( data );
@@ -38,9 +38,9 @@ $("#autocomplete-input").autocomplete({
  });
 
 
-function BuscarDescrip (pade){
-  $("#sintomas").html("");
-    //alert (pade);
+function BuscarDescrip (autocomplete_input){
+  $("#Q").html("");
+    alert (autocomplete_input);
     $.ajax({
       type: 'POST',
       url: '../php/buscadetalle.php',
@@ -48,12 +48,9 @@ function BuscarDescrip (pade){
       data: 'IDPad=' + autocomplete_input +'',
       success: function (data) {
         //alert (data);
-        if(datos.status == 'ok'){
-          window.location = "../html/Articulo(NO).html";
-        }
         $.each(data,function(i,v){
           //alert (v.label);
-          $("#s").html(v.label);
+          $("#Q").html(v.label);
         });
       },
       error: function(error) {

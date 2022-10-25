@@ -24,7 +24,7 @@
     <script src="../js/jquery-3.6.1.js"></script>
     <!-- <script src="../js/BuscarPad.js"></script> -->
     <script type="text/javascript" src="../js/jquery-ui.js"></script>
-    <link rel="stylesheet" href="../js/jquery-ui.css" />
+    <link rel="stylesheet" href="../css/jquery-ui.css" />
     <script type="text/javascript" src="../js/prueba.js"></script>
 </head>
 <!--
@@ -87,18 +87,21 @@
     </ul>
 </section>
 
-<!--Buscar-->
+<!--Buscar  class="hidden" -->
 <section id="buscar" class="section section-buscar teal lighten-2 white-text center scrollspy">
     <div class="container center">
+        <div id="Q" ></div>
         <div class="row">
             <div class="col s12">
                 <h3>Buscar Padecimientos</h3>
+                <form action="../php/busca.php" method="post">
                 <div class="input-field center">
                     <div class="ui-widget">
                     <input type="text" class="white" id="autocomplete-input" placeholder="Ansiedad, depreción, etc...">
                     <button onclick="">enviar</button>
                 </div>
                 </div>
+            </form>
             </div>
         </div>
     </div>
