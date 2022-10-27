@@ -5,7 +5,8 @@ mysqli_select_db($con, "proyecto_2022");
 if(isset($_POST['buscnom'])){
     if(!empty($_POST['buscnom']) || !empty($_POST[nom]) || !empty($_POST[sint]) || !empty($_POST[ejer])){
     $pad = $_POST['pad']
-    $sql= "UPDATE Padecimientos SET Nombre=$_POST[nom]., Sintomas='$_POST[sint]', Ejercicios='$_POST[ejer]' WHERE Nombre='$_POST[pad]';";
+    $sql= "UPDATE padecimientos SET DSpad="'.$_POST[nom].'" WHERE DSpad="'.$_POST[pad].'";";
+    $sql= "UPDATE padecimientos SET ="'.$_POST[nom].'", Sintomas="'.$_POST[sint].'", Ejercicios="'.$_POST[ejer].'" WHERE Nombre="'.$_POST[pad].'";";
     $excute=mysqli_query($con,$sql);
     }
         if(!$excute){

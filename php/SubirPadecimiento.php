@@ -8,8 +8,17 @@ if($con->connect_error){
 
     if(!empty('Cnom') || !empty('Csin') || !empty('Ceje')){
 
-        $sql = "INSERT INTO Padecimientos (Nombre,Sintomas,Ejercicios) VALUES('$_POST[Cnom]','$_POST[Csin]','$_POST[Ceje]');";
+        $sql = "INSERT INTO padecimientos (DSpad) VALUES('$_POST[Cnom]','$_POST[Csin]','$_POST[Ceje]');";
         $excute = mysqli_query($con,$sql);
+        $sql1="Select * from detalles_padecimiento where IDpad=".$_REQUEST['IDPad']."";
+            $result=$con->query($sql1);
+            if($result->num_rows > 0){
+            while($row = mysqli_fetch_array($result) ){
+            $data[] = array("value"=>$row['IDgeneral'],"label"=>$row['Texto']);
+            }
+            echo json_encode($data);
+            }
+        $sql2 = "INSERT INTO detalles_padecimiento (Categoria, Texto) VALUES('sintomas','$_POST[Csin]'),('ejercicios','$_POST[Ceje]') WHERE IDpad = [];";
     }
 if (!mysqli_query($con,$sql)) { 
     die('Error: ' . mysql_error());
