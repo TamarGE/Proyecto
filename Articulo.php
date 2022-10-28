@@ -1,16 +1,30 @@
-
 <?php
-//COMO NO SE SI EL PHP FUNCIONARÍA AFUERA DEL HTML, TENGO UNA COPIA QUE ES PHP Y OTRA IGUAL PERO SOLO HTML
-$con = new mysqli("localhost", "root", "rootroot");
-mysqli_select_db($con, "proyecto_2022");
+require_once '../php/config.php';
 
-if($con->connect_error){
-	die("Connection failed: " . $con->connect_error);
+$sql = "SELECT IDpad from padecimientos where DSPad='".$_GET['que']."'";
+$results = mysqli_query($con, $sql);
+$pad_nombres = mysqli_num_rows($results);
+$deta = array();
+
+if($pad_nombres > 0){
+    while($row = mysqli_fetch_array($results) ){
+        $sql2="Select * from detalles_padecimiento where IDpad=".$row['IDpad']." ORDER BY IDCat";
+        $results2 = mysqli_query($con, $sql2);
+        $pad2=mysqli_num_rows($results2);
+        if ($pad2>0){
+            while($row2 = mysqli_fetch_array($results2)){
+                ///echo $row2['Texto'].$row2['IDCat']."<br>";
+                $deta[]=array("value"=>$row2['Texto']);
+            }
+        }
+
+    }
+    /*for ($i=0;$i<=2;$i++){
+        echo $deta[$i]["value"];
+    }*/
 }
 
-$data=array();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,45 +68,32 @@ $data=array();
 <!--Artículo-->
 <section id="articulo" class="section section-articulo">
     <div class="container">
-        <h2 class="text center"><?php
-            $sql1="Select * from detalles_padecimiento where IDpad like '%".$_REQUEST['pad']."' AND categoria=sintomas;";
-            $sint = $con->query($sql1);
-            while($row = mysqli_fetch_assoc($sint)){
-                echo $row["texto"];
-            }?>
-        </h2>
+        <h2 class="text center">Nombre Padecimiento</h2>
         <br>
         <div class="col s12">
             <div class="card flow-text">
                 <div class="card-tabs">
                     <ul class="tabs tabs-fixed-width">
+                        <li class="tab red lighten-3" ><a href="#Quees" class="black-text">¿Qué es?</a></li>
                         <li class="tab red lighten-3" ><a href="#Sintomas" class="black-text">Síntomas</a></li>
                         <li class="tab red lighten-3"><a href="#Ejercicios" class="black-text">Ejercicios</a></li>
-                        <li class="tab red lighten-3"><a href="#Otros" class="black-text">Otros</a></li>
                     </ul>
                     <!--active es el que se va a ver al principio. Si no se pone un active, por default el primero va a ser el que se vea-->
                 </div>
                 <div class="card-content teal lighten-4">
+                    <div id="Quees">
+                    ¿Qué es?
+                        <p id="Q"><?php echo $deta[2]['value']?></p>
+                     </div>
                     <div id="Sintomas">
                         Síntomas
-                        <p id="s">
-                        <?php
-                        
-                        ?>
-                        </p>
+                        <p id="S"><?php echo $deta[0]['value']?></p>
                      </div>
                     <div id="Ejercicios">
                         Ejercicios
-                        <p id="e">
-                        <?php
-                        $sql2="Select * from detalles_padecimiento where IDpad like '%".$_REQUEST['pad']."' AND categoria=ejercicios;";
-                        $otro = $con->query($sql2);
-                        
-                        while($row = mysqli_fetch_assoc($otro)){
-                            echo $row["texto"];
-                        }
-                        ?>
-                        </div>
+                        <p id="E"><?php echo $deta[1]['value']?></p>
+                    </div>
+                </div>
             </div>
         </div> 
     </div>
@@ -128,16 +129,6 @@ $data=array();
             transition: 500,
             interval: 6000
         });
-        //autocomplete
-        const ac = document.querySelector('.autocomplete');
-        M.Autocomplete.init(ac,{
-            data: {
-                "Depresión": null,
-                "Ansiedad": null,
-                "Anorexia": null,
-                "Bipolar": null,
-                "TDAH": null,
-            }});
         //material boxed
         const mb = document.querySelector('.materialboxed');
         M.Materialboxed.init(mb, {});

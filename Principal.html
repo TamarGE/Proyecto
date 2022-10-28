@@ -19,13 +19,8 @@
             return false;
         }
     </script> -->
+<script src="js/jquery-3.6.1.js"></script>
 
-    <!-- Conexión al js -->
-    <script src="../js/jquery-3.6.1.js"></script>
-    <!-- <script src="../js/BuscarPad.js"></script> -->
-    <script type="text/javascript" src="../js/jquery-ui.js"></script>
-    <link rel="stylesheet" href="../css/jquery-ui.css" />
-    <script type="text/javascript" src="../js/prueba.js"></script>
 </head>
 <!--
     TENGO QUE ARREGLAS LAS H1-6 PARA QUE TENGAN EL TAMAÑO CORRECTO, Y CAMBIARLES
@@ -90,17 +85,16 @@
 <!--Buscar  class="hidden" -->
 <section id="buscar" class="section section-buscar teal lighten-2 white-text center scrollspy">
     <div class="container center">
-        <div id="Q" ></div>
         <div class="row">
             <div class="col s12">
                 <h3>Buscar Padecimientos</h3>
-                <form action="../php/busca.php" method="post">
+                <form>
                 <div class="input-field center">
-                    <div class="ui-widget">
-                    <input type="text" class="white" id="autocomplete-input" placeholder="Ansiedad, depreción, etc...">
-                    <button onclick="">enviar</button>
+                    <input type="text" class="autocomplete white" id="queryInput" placeholder="Trastorno de ansiedad, depreción, etc...">
+                   <!--<input type="text" name="query" id="queryInput" class="autocomplete" autocomplete="off"> 
+                       <button onclick="">enviar</button>-->
                 </div>
-                </div>
+                <input type="button" value="Enviar" name="submit" id="submitBtn" class="btn">
             </form>
             </div>
         </div>
@@ -200,7 +194,7 @@
             
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
+    <script src="js/auto.js"></script>
     <script>
         //sidenav
         const sideNav = document.querySelector('.sidenav');
