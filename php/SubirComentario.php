@@ -1,11 +1,5 @@
 <?php
-$con = new mysqli("localhost", "root", "rootroot");
-mysqli_select_db($con, "proyecto_2022");
-
-if($con->connect_error){
-	die("Connection failed: " . $con->connect_error);
-}
-
+require_once "config.php";
     if(!empty('nom') || !empty('mail') || !empty('com')){
 
         $sql = "INSERT INTO Comentarios (Nombre,Mail,Comentario) VALUES('$_POST[nom]','$_POST[mail]','$_POST[com]');";

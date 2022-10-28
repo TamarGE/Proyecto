@@ -1,6 +1,5 @@
 <?php
-$con = new mysqli("localhost", "root", "rootroot");
-mysqli_select_db($con, "proyecto_2022");
+require_once "config.php";
 
 if(isset($_POST['buscnom'])){
     if(!empty($_POST['buscnom']) || !empty($_POST[nom]) || !empty($_POST[sint]) || !empty($_POST[ejer])){
