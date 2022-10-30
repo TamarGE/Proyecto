@@ -42,3 +42,9 @@
     font-size: 18px !important;
     width: 100% !important;
 }
+
+.section-buscar .btn{
+   width: 100% !important;
+   border: 0px solid #ec7171;
+}
+

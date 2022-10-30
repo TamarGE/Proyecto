@@ -1,31 +1,38 @@
 <?php
 require_once "config.php";
 
-    if(!empty('Cnom') || !empty('Csin') || !empty('Ceje')){
+    if(!empty('Cnom') || !empty('Csin') || !empty('Cque') || !empty('Ceje')){
 
-        $sql = "INSERT INTO padecimientos (DSpad) VALUES('$_POST[Cnom]','$_POST[Csin]','$_POST[Ceje]');";
-        $excute = mysqli_query($con,$sql);
-        $sql1="Select * from detalles_padecimiento where IDpad=".$_REQUEST['IDPad']."";
-            $result=$con->query($sql1);
-            if($result->num_rows > 0){
+        $sql = "SELECT * from padecimientos where =".$_REQUEST['Cnom'].";";
+        $result = $con->query($sql);
+
+        if($result->num_rows > 0){
             while($row = mysqli_fetch_array($result) ){
-            $data[] = array("value"=>$row['IDgeneral'],"label"=>$row['Texto']);
+            echo '<script type ="text/JavaScript"> alert("Este padecimiento ya existe en nuestro registro. Si desea realizar cambios, utilice la función de EDITAR")</script>';
             }
-            echo json_encode($data);
+        }else{
+            $sql = "INSERT INTO padecimientos (DSpad) VALUES(".$_POST['Cnom'].");";
+            $result = $con->query($sql);
+    
+            $sql = "SELECT * from padecimientos where DSpad=".$_REQUEST['Cnom'].";";
+            $result = $con->query($sql);
+    
+            if($result->num_rows > 0){
+                $row = mysqli_fetch_array($result);
+                $idnuevo=$row['IDpad'];
+            
+                $sql ="INSERT INTO detalles_padecimiento (Categoria, Texto, IDpad) VALUES ('2', ".$_REQUEST['s'].",' +  $idnuevo +') ;";
+                $result = $con->query($sql);
+            
+                $sql = "INSERT INTO detalles_padecimiento (Categoria, Texto, IDpad) VALUES ('1', ".$_REQUEST['e'].",' +  $idnuevo +') ;";
+                $result = $con->query($sql);
+            
+                $sql = "INSERT INTO detalles_padecimiento (Categoria, Texto, IDpad) VALUES ('3', ".$_REQUEST['q'].",' +  $idnuevo +') ;";
+                $result = $con->query($sql);
+
             }
-        $sql2 = "INSERT INTO detalles_padecimiento (Categoria, Texto) VALUES('sintomas','$_POST[Csin]'),('ejercicios','$_POST[Ceje]') WHERE IDpad = [];";
+        }
     }
-if (!mysqli_query($con,$sql)) { 
-    die('Error: ' . mysql_error());
- }
- if(!$excute){
-    echo "No se pudo guardar el padecimiento";
-    exit();
-}else{
-    header('refresh:5; url=../html/Principal.html');
-    echo "Padecimiento Publicado";
-    exit();
-}
 
 
 ?>

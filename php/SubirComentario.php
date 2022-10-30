@@ -1,5 +1,10 @@
 <?php
-require_once "config.php";
+require_once "config.php"
+
+if($con->connect_error){
+	die("Connection failed: " . $con->connect_error);
+}
+
     if(!empty('nom') || !empty('mail') || !empty('com')){
 
         $sql = "INSERT INTO Comentarios (Nombre,Mail,Comentario) VALUES('$_POST[nom]','$_POST[mail]','$_POST[com]');";

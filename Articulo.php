@@ -1,5 +1,5 @@
 <?php
-require_once '../php/config.php';
+require_once '/php/config.php';
 
 $sql = "SELECT IDpad from padecimientos where DSPad='".$_GET['que']."'";
 $results = mysqli_query($con, $sql);
@@ -50,7 +50,7 @@ if($pad_nombres > 0){
         <nav class="teal lighten-3">
             <div class="container">
                 <div class="nav-wrapper">
-                    <a href="#" class="brand-logo">NOMBRE</a>
+                <a href="" class="brand-logo"><img src="Logo.png" height="60" class="vertical-align:middle"></a>
                     <a href="" data-target="mobile-nav" class="sidenav-trigger">
                         <i class="material-icons">menu</i>
                     </a>
@@ -100,18 +100,8 @@ if($pad_nombres > 0){
 </section>
 
 <!--Footer-->
-<footer class="section teal darken-2 white-text">
-<div class="row">
-    <div class="col s8 l4">
-        <h6>NOMBRE</h6>
-    </div>
-    <div class="col s4 right">
-    <p class="flow-text">NOMBRE $copy; 2018</p>
-<!--Flow text hace que el texto sea más responsive, se
-    agranda cuando la pantalla es más grande y achica un 
-    poco cuando la pantalla es más pequeña-->
-</div>
-</div>
+<footer class="section teal lighten-3 white-text center-align">
+    <a href="" class="brand-logo center"><img src="../Logo.png" height="100" class="center vertical-align:middle"></a>
 </footer>
             
     <!-- Compiled and minified JavaScript -->
