@@ -11,7 +11,9 @@ $("#E").click(function(){
 		data: 'nom=' + $("#EN").val() + 'sint=' + $("#ES").val() + '&ejer=' + $("#EJ").val(),
 		success: function (datos) {
 			if(datos.status == 'ok'){
-				window.location = "../html/Editor.html";/*
+				window.location = "../html/Editor.html";
+				alert ('nom=' + $("#EN").val() + 'sint=' + $("#ES").val() + '&ejer=' + $("#EJ").val(),);
+				/*
 				$("#O").html(mensaje);
 				$("#O").show(450);*/
 			}else{

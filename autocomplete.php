@@ -1,5 +1,5 @@
 <?php
-require_once '../php/config.php';
+require_once './php/config.php';
 
 $sql = "SELECT * from padecimientos";
 $results = mysqli_query($con, $sql);

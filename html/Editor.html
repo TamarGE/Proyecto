@@ -12,6 +12,11 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="../css/style.css">
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"></script>
 </head>
 <body id="inicio">
     <!--NavBar-->
@@ -26,6 +31,7 @@
                     <ul class="right hide-on-med-and-down">
                         <li><a href="../html/Instrucciones.html">Instrucciones</a></li>
                         <li><a href="../php/Comentarios.php">Comentarios</a></li>
+                        <li><a href="../Principal.html">Volver a la Página Principal</a></li>
                     </ul>
                 </div>
             </div>
@@ -34,6 +40,7 @@
     <ul class="sidenav" id="mobile-nav">
         <li><a href="../html/Instrucciones.html">Instrucciones</a></li>
         <li><a href="../php/Comentarios.php">Comentarios</a></li>
+        <li><a href="../Principal.html">Volver a la Página Principal</a></li>
     </ul>
 
 <!--Editar/Crear-->
@@ -56,11 +63,10 @@
                             <div class="input-field">
                                 <input name="Cnom" id="CN" type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
                             </div>
-                            <!--
-                            <h5>Características</h5>
+                            <h5>Qué es</h5>
                             <div class="input-field">
-                                <input name="Char" type="text" placeholder="Palabras características del Padecimiento" class="white grey-text autocomplete">
-                            </div>-->
+                                <textarea name="Cque" id="CQ" class="materialize-textarea white grey-text" placeholder="Ingrese los síntomas"></textarea>
+                            </div>
                             <h5>Síntomas</h5>
                             <div class="input-field">
                                 <textarea name="Csin" id="CS" class="materialize-textarea white grey-text" placeholder="Ingrese los síntomas"></textarea>
@@ -78,18 +84,22 @@
                         <div class="input-field">
                                 <input id="buscnom" type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
                             </div> 
-                            <button><a target="_blank" href="../html/ViewContent.html"></a></button>
+                            <input class="btn red lighten-3 black-text" href="../html/ViewContent.html" value="Ver contenido actual"></input>
                         </form>
-                        <from>
+                        <form>
                             <h5>Nombre Padecimento</h5>
                             <div class="input-field">
                                 <input name="nom" id="EN" type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
                             </div>
-                            <h5>Síntomas</a></h5>
+                            <h5>Qué es</h5>
+                            <div class="input-field">
+                                <textarea name="quee" id="EQ" class="materialize-textarea white grey-text" placeholder="Ingrese la explicación"></textarea>
+                            </div>
+                            <h5>Síntomas</h5>
                             <div class="input-field">
                                 <textarea name="sint" id="ES" class="materialize-textarea white grey-text" aria-valuetext="Ingrese los síntomas"></textarea>
                             </div>
-                            <h5><a target="_blank" href="../html/ViewContent.html">Ejercicios</a></h5>
+                            <h5>Ejercicios</h5>
                             <div class="input-field">
                                 <textarea name="ejer" id="EJ" class="materialize-textarea white grey-text" value="Ingrese los ejercicios"></textarea>
                             </div>
@@ -109,16 +119,16 @@
          
 <script src="../ckeditor/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace('text_editor1');
-    CKEDITOR.replace('text_editor2');
-    CKEDITOR.replace('text_editor3');
-    CKEDITOR.replace('SintTxt');
-    CKEDITOR.replace('EjerTxt');
-    CKEDITOR.replace('QueTxt');
+    CKEDITOR.replace('Cque');
+    CKEDITOR.replace('Csin');
+    CKEDITOR.replace('Ceje');
+    CKEDITOR.replace('quee');
+    CKEDITOR.replace('sint');
+    CKEDITOR.replace('ejer');
 </script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
+<script src="../js/SubirPad.js"></script>
     <script>
         //sidenav
         const sideNav = document.querySelector('.sidenav');

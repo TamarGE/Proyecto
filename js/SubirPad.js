@@ -2,21 +2,19 @@ $(document).ready(function(){
 
 $("#O").hide();
 
-// conexión con la db
 $("#S").click(function(){
 	$.ajax({
 		type:'POST',
 		url: '../php/SubirPadecimiento.php',
 		dataType: "json",
-		data: 'Cnom=' + $("#n").val() + 'Csin=' + $("#s").val() + '&Ceje=' + $("#e").val(),
+		data: 'Nom=' + $("#CN").val() + 'Que=' + $("#CQ").val() + 'Sint=' + $("#CS").val() + '&Ejer=' + $("#CE").val(),
 		success: function (datos) {
 			if(datos.status == 'ok'){
-				window.location = "../html/Editor.html";/*
-				$("#O").html(mensaje);
-				$("#O").show(450);*/
+				alert("Padecimiento guardado exitosamente");
+				alert("Nom=" + $('#CN').val() + "Que=" + $('#CQ').val() + "Sint=" + $('#CS').val() + "&Ejer=" + $("#CE").val());
+				window.location="../html/Editos.html";
 			}else{
-				mensaje="Mensaje no enviado";
-				$("#O").show();
+				alert ("Error: Padecimiento no guardado");
 			}
 
 		 },

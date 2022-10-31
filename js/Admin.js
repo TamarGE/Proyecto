@@ -39,7 +39,7 @@ $("#E").click(function(){
 		data: 'usu=' + $("#u").val() + '&pass=' + $("#p").val(),
 		success: function (datos) {
 			if(datos.status == 'ok'){
-				window.location = "../html/Editor.html";/*
+				window.location = "Editor.html";/*
 				$("#O").html(mensaje);
 				$("#O").show(450);*/
 			}else{

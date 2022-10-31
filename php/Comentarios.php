@@ -52,12 +52,7 @@
                     </thead>
                     <tbody>
                     <?php
-                        $con = new mysqli("localhost", "root", "rootroot");
-                        mysqli_select_db($con, "proyecto_2022");
-                        
-                        if($con->connect_error){
-                            die("Connection failed: " . $con->connect_error);
-                        }
+                        require_once "config.php";
                         $data=array();
 
                             $sql='SELECT DISTINCT Nombre, Mail, Comentario from comentarios ORDER BY Nombre;';

@@ -3,34 +3,39 @@ require_once "config.php";
 
     if(!empty('Cnom') || !empty('Csin') || !empty('Cque') || !empty('Ceje')){
 
-        $sql = "SELECT * from padecimientos where =".$_REQUEST['Cnom'].";";
+        $sql = "SELECT * from padecimientos where DSpad='".$_REQUEST['Cnom']."';";
         $result = $con->query($sql);
 
-        if($result->num_rows > 0){
-            while($row = mysqli_fetch_array($result) ){
-            echo '<script type ="text/JavaScript"> alert("Este padecimiento ya existe en nuestro registro. Si desea realizar cambios, utilice la función de EDITAR")</script>';
-            }
-        }else{
-            $sql = "INSERT INTO padecimientos (DSpad) VALUES(".$_POST['Cnom'].");";
+        if(!($result->num_rows > 0)){
+            
+            /*echo '<script type ="text/JavaScript"> alert("Este padecimiento ya existe en nuestro registro. Si desea realizar cambios, utilice la función de EDITAR")</script>';
+            
+        }else{*/
+            $sql = "INSERT INTO padecimientos (DSpad) VALUES('".$_POST['Cnom']."');";
             $result = $con->query($sql);
     
-            $sql = "SELECT * from padecimientos where DSpad=".$_REQUEST['Cnom'].";";
+            $sql = "SELECT * from padecimientos where DSpad='".$_REQUEST['Cnom']."';";
             $result = $con->query($sql);
-    
-            if($result->num_rows > 0){
                 $row = mysqli_fetch_array($result);
                 $idnuevo=$row['IDpad'];
             
-                $sql ="INSERT INTO detalles_padecimiento (Categoria, Texto, IDpad) VALUES ('2', ".$_REQUEST['s'].",' +  $idnuevo +') ;";
+                $sql ="INSERT INTO detalles_padecimiento (Categoria, Texto, IDpad) VALUES (2, ".$_POST['Ceje']."," +  $idnuevo +") ;";
                 $result = $con->query($sql);
             
-                $sql = "INSERT INTO detalles_padecimiento (Categoria, Texto, IDpad) VALUES ('1', ".$_REQUEST['e'].",' +  $idnuevo +') ;";
+                $sql = "INSERT INTO detalles_padecimiento (Categoria, Texto, IDpad) VALUES (1, ".$_POST['Csin'].",' +  $idnuevo +') ;";
                 $result = $con->query($sql);
             
-                $sql = "INSERT INTO detalles_padecimiento (Categoria, Texto, IDpad) VALUES ('3', ".$_REQUEST['q'].",' +  $idnuevo +') ;";
+                $sql = "INSERT INTO detalles_padecimiento (Categoria, Texto, IDpad) VALUES (3, ".$_POST['Cque'].",' +  $idnuevo +') ;";
                 $result = $con->query($sql);
 
-            }
+        }
+        if(!$result){
+            echo "No se pudo publicar el comentario";
+            exit();
+        }else{
+            header('refresh:1; url=../html/Editor.html');
+            echo '<script type ="text/JavaScript"> alert("Comentario Publicado")</script>';
+            exit();
         }
     }
 

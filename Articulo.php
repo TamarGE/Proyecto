@@ -1,27 +1,24 @@
 <?php
-require_once '/php/config.php';
+require_once './php/config.php';
 
-$sql = "SELECT IDpad from padecimientos where DSPad='".$_GET['que']."'";
+$sql = "SELECT IDpad from padecimientos where DSPad='".$_GET['que']."';";
 $results = mysqli_query($con, $sql);
 $pad_nombres = mysqli_num_rows($results);
 $deta = array();
 
 if($pad_nombres > 0){
     while($row = mysqli_fetch_array($results) ){
-        $sql2="Select * from detalles_padecimiento where IDpad=".$row['IDpad']." ORDER BY IDCat";
+        $sql2="SELECT * from detalles_padecimiento where IDpad=".$row['IDpad']." ORDER BY Categoria";
         $results2 = mysqli_query($con, $sql2);
-        $pad2=mysqli_num_rows($results2);
-        if ($pad2>0){
+        $pad2 = mysqli_num_rows($results2);
+        if ($pad2 > 0){
             while($row2 = mysqli_fetch_array($results2)){
-                ///echo $row2['Texto'].$row2['IDCat']."<br>";
+                echo $row2['Texto'].$row2['Categoria']."<br>";
                 $deta[]=array("value"=>$row2['Texto']);
             }
         }
 
     }
-    /*for ($i=0;$i<=2;$i++){
-        echo $deta[$i]["value"];
-    }*/
 }
 
 ?>
@@ -39,6 +36,10 @@ if($pad_nombres > 0){
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
 </head>
 <!--
     TENGO QUE ARREGLAS LAS H1-6 PARA QUE TENGAN EL TAMAÑO CORRECTO, Y CAMBIARLES
@@ -55,14 +56,14 @@ if($pad_nombres > 0){
                         <i class="material-icons">menu</i>
                     </a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="../html/Principal.html">Volver a la Página Principal</a></li>
+                        <li><a href="Principal.html">Volver a la Página Principal</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
     <ul class="sidenav" id="mobile-nav">
-        <li><a href="../html/Principal.html">Volver a la Página Principal</a></li>
+        <li><a href="Principal.html">Volver a la Página Principal</a></li>
     </ul>
 
 <!--Artículo-->
@@ -82,15 +83,12 @@ if($pad_nombres > 0){
                 </div>
                 <div class="card-content teal lighten-4">
                     <div id="Quees">
-                    ¿Qué es?
                         <p id="Q"><?php echo $deta[2]['value']?></p>
                      </div>
                     <div id="Sintomas">
-                        Síntomas
                         <p id="S"><?php echo $deta[0]['value']?></p>
                      </div>
                     <div id="Ejercicios">
-                        Ejercicios
                         <p id="E"><?php echo $deta[1]['value']?></p>
                     </div>
                 </div>
@@ -101,7 +99,7 @@ if($pad_nombres > 0){
 
 <!--Footer-->
 <footer class="section teal lighten-3 white-text center-align">
-    <a href="" class="brand-logo center"><img src="../Logo.png" height="100" class="center vertical-align:middle"></a>
+    <a class="brand-logo center"><img src="Logo.png" height="100" class="center vertical-align:middle"></a>
 </footer>
             
     <!-- Compiled and minified JavaScript -->
@@ -131,14 +129,6 @@ if($pad_nombres > 0){
         document.addEventListener('DOMContentLoaded', function() {
             M.AutoInit();
         })
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.carousel');
-        var instances = M.Carousel.init(elems,{
-            indicators: true
-        });
-        });
     </script>
 </body>
 
