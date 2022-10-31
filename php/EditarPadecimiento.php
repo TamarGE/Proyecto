@@ -12,7 +12,7 @@ if(!empty('bnom')){
         if(!empty('nom')){
             $sql1 = "UPDATE padecimientos SET DSpad='".$_REQUEST['nom']."' WHERE IDpad = ".$idnuevo."";
             $result = $con->query($sql1);
-            echo $sql1;
+            //echo $sql1;
         }
         if(!empty('sint')){
             $sql2 = "UPDATE detalles_padecimiento SET Texto='".$_REQUEST['sint']."' WHERE IDpad = ".$idnuevo." AND IDCat=1";
