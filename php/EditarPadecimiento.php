@@ -1,29 +1,29 @@
 <?php
 require_once "config.php";
 
-if(!empty('Cnom'){
-    $sql = "SELECT * from padecimientos where DSpad=".$_REQUEST['Cnom'].";";
+if(!empty('bnom'){
+    $sql = "SELECT * from padecimientos where DSpad=".$_REQUEST['bnom'].";";
     $result = $con->query($sql);
 
     if($result->num_rows > 0){
         $row = mysqli_fetch_array($result);
         $idnuevo=$row['IDpad'];
             
-        if(!empty('Cnom'){
-            $sql = "UPDATE padecimientos SET DSpad='".$_POST['Cnom']."' WHERE IDpad = '+ $idnuevo +');";
-            $result = $con->query($sql);
+        if(!empty('nom'){
+            $sql1 = "UPDATE padecimientos SET DSpad='".$_REQUEST['nom']."' WHERE IDpad = ".$idnuevo.")";
+            $result = $con->query($sql1);
         }
-        if(!empty('Csin')){
-            $sql = "UPDATE detalles_padecimiento SET Texto='".$_POST['Csin']."' WHERE IDpad = '+ $idnuevo +' AND Categoria='1');";
-            $result = $con->query($sql);
+        if(!empty('sint')){
+            $sql2 = "UPDATE detalles_padecimiento SET Texto='".$_REQUEST['sint']."' WHERE IDpad = ".$idnuevo." AND IDCat=1)";
+            $result = $con->query($sql2);
         }
-        if(!empty('Cque')){
-            $sql = "UPDATE detalles_padecimiento SET Texto='".$_POST['Cque']."' WHERE IDpad = '+ $idnuevo +' AND Categoria='2');";
-            $result = $con->query($sql);
+        if(!empty('quee')){
+            $sql3 = "UPDATE detalles_padecimiento SET Texto='".$_REQUEST['quee']."' WHERE IDpad = ".$idnuevo." AND IDCat=2)";
+            $result = $con->query($sql3);
         }
-        if(!empty('Ceje')){
-            $sql = "UPDATE detalles_padecimiento SET Texto='".$_POST['Ceje']."' WHERE IDpad = "'+ $idnuevo +'" AND Categoria='0');";
-            $result = $con->query($sql);
+        if(!empty('ejer')){
+            $sql4 = "UPDATE detalles_padecimiento SET Texto='".$_REQUEST['ejer']."' WHERE IDpad = ".$idnuevo." AND IDCat=3)";
+            $result = $con->query($sql4);
         }
     }else{
         echo '<script type ="text/JavaScript"> alert("Este padecimiento no existe en nuestro registro. Si desea agregarlo, utilice la función de CREAR")</script>';
@@ -36,12 +36,11 @@ if(!$excute){
             exit();
             //tengo que cambiar el url.
         }else{
-            header('refresh:5; url=../html/Editor.html');
+            //header('refresh:5; url=../html/Editor.html');
             echo "Article Published succesfully";
             exit();
         }
-        header('Location: dashboard.php?emptyField');
-        exit();
+        
     }
 }
 

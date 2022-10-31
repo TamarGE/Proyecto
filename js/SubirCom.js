@@ -9,13 +9,13 @@ $("#E").click(function(){
 		dataType: "html",
 		data: 'nom=' + $("#n").val() + '&mail=' + $("#m").val() + '&com=' + $("#c").val(),
 		success: function (datos) {
-			//if(datos == 'ok'){
-				//window.location = "../Principal.html";
-				alert(datos);
-			//}else{
-			//	alert=("Mensaje no enviado");
-			//}
-			//alert("paso");
+			if(datos == 'S'){
+				window.location = "Principal.html";
+			//	alert("Comentario Publicado");
+			}else{
+				alert("Mensaje no enviado");
+			}
+			
 		 },
 
 	});
