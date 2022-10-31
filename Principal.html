@@ -19,11 +19,12 @@
             return false;
         }
     </script> -->
+   
     <script
     src="https://code.jquery.com/jquery-3.6.1.min.js"
     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
     crossorigin="anonymous"></script>
-
+    <script src="./js/SubirCom.js"></script>
 </head>
 <!--
     TENGO QUE ARREGLAS LAS H1-6 PARA QUE TENGAN EL TAMAÑO CORRECTO, Y CAMBIARLES
@@ -170,7 +171,7 @@
             </div>
             <div class="col s12 m6 right">
                 <h5>Escribe aquí lo que nos quieras decir:</h5>
-                <form action="../php/SubirComentario.php" method="POST">
+                <form >
                 <div class="input-field">
                     <input id="n" name="nom" type="text" placeholder="Nombre" class="white autocomplete">
                 </div>
@@ -180,8 +181,8 @@
                 <div class="input-field">
                     <textarea id="c" name="com" class="materialize-textarea white" placeholder="Enter Mesage"></textarea>
                 </div>
-                <input id="E" name="submit_com" type="Submit" value="Enviar" class="btn red lighten-3 black-text">
-                </form>
+                <input id="E" name="submit_com" type="submit" value="Enviar" class="btn red lighten-3 black-text">
+            </form>
             </div>
         </div>
     </div>
@@ -195,6 +196,7 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/auto.js"></script>
+    <!--<script src="js/SubirCom.js"></script>-->
     <script>
         //sidenav
         const sideNav = document.querySelector('.sidenav');

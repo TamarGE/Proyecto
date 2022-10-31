@@ -13,7 +13,6 @@ if($pad_nombres > 0){
         $pad2 = mysqli_num_rows($results2);
         if ($pad2 > 0){
             while($row2 = mysqli_fetch_array($results2)){
-                echo $row2['Texto'].$row2['IDCat']."<br>";
                 $deta[]=array("value"=>$row2['Texto']);
             }
         }

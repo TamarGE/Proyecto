@@ -1,13 +1,11 @@
 <?php
-require_once "config.php"
+require_once "config.php";
 
-if($con->connect_error){
-	die("Connection failed: " . $con->connect_error);
-}
 
     if(!empty('nom') || !empty('mail') || !empty('com')){
 
-        $sql = "INSERT INTO Comentarios (Nombre,Mail,Comentario) VALUES('$_POST[nom]','$_POST[mail]','$_POST[com]');";
+        $sql = "INSERT INTO Comentarios (Nombre,Mail,Comentario) VALUES ('".$_REQUEST['nom']."','".$_REQUEST['mail']."','".$_REQUEST['com']."')";
+echo $sql;
         $excute = mysqli_query($con,$sql);
     }
 if (!mysqli_query($con,$sql)) { 
@@ -18,7 +16,7 @@ if (!mysqli_query($con,$sql)) {
     echo "No se pudo publicar el comentario";
     exit();
 }else{
-    header('refresh:5; url=../html/Principal.html');
+    //header('refresh:1; url=../Principal.html');
     echo "Comentario Publicado";
     exit();
 }

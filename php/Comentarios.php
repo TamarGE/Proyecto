@@ -68,7 +68,7 @@
 
                         $con->close();
                     ?>
-                        <script src="../php/TablaComentarios.php"></script>
+                        <script src="TablaComentarios.php"></script>
                     <!--
                     -->
                     
