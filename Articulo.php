@@ -8,12 +8,12 @@ $deta = array();
 
 if($pad_nombres > 0){
     while($row = mysqli_fetch_array($results) ){
-        $sql2="SELECT * from detalles_padecimiento where IDpad=".$row['IDpad']." ORDER BY Categoria";
+        $sql2="SELECT * from detalles_padecimiento where IDpad=".$row['IDpad']." ORDER BY IDCat";
         $results2 = mysqli_query($con, $sql2);
         $pad2 = mysqli_num_rows($results2);
         if ($pad2 > 0){
             while($row2 = mysqli_fetch_array($results2)){
-                echo $row2['Texto'].$row2['Categoria']."<br>";
+                echo $row2['Texto'].$row2['IDCat']."<br>";
                 $deta[]=array("value"=>$row2['Texto']);
             }
         }
