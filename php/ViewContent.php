@@ -55,7 +55,7 @@ if($pad_nombres > 0){
         <nav class="teal lighten-3">
             <div class="container">
                 <div class="nav-wrapper">
-                    <a href="#" class="brand-logo">NOMBRE</a>
+                <a href="" class="brand-logo"><img src="../Logo.png" height="60" class="vertical-align:middle"></a>
                     <a href="" data-target="mobile-nav" class="sidenav-trigger">
                         <i class="material-icons">menu</i>
                     </a>
