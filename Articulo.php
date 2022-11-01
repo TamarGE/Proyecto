@@ -7,6 +7,7 @@ $pad_nombres = mysqli_num_rows($results);
 $deta = array();
 
 if($pad_nombres > 0){
+
     while($row = mysqli_fetch_array($results) ){
         $sql2="SELECT * from detalles_padecimiento where IDpad=".$row['IDpad']." ORDER BY IDCat";
         $results2 = mysqli_query($con, $sql2);
@@ -69,7 +70,7 @@ if($pad_nombres > 0){
 <!--Artículo-->
 <section id="articulo" class="section section-articulo">
     <div class="container">
-        <h2 class="text center">Nombre Padecimiento</h2>
+        <h3 class="text center"><?php echo $_GET['que'] ?></h3>
         <br>
         <div class="col s12">
             <div class="card flow-text">
