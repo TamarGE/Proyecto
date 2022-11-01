@@ -61,7 +61,7 @@
                         <form action="../php/SubirPadecimiento.php" method="POST">
                             <h5>Padecimento</h5>
                             <div class="input-field">
-                                <input name="Cnom" id="CN" type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
+                                <input name="Cnom" id="CN" type="text" placeholder="Nombre del Padecimiento" class="white grey-text">
                             </div>
                             <h5>Qué es</h5>
                             <div class="input-field">
@@ -84,12 +84,12 @@
                         <div class="input-field">
                                 <input name="bnom" id="buscnom" type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
                             </div> 
-                            <input class="btn red lighten-3 black-text" href="../php/ViewContent.php" value="Ver contenido actual"></input>
+                            <input type="button" value="Ver contenido actual" name="submit" id="submitBtn" class="btn red lighten-3 black-text" style="border: 0px solid #ec7171 !important;">
                         </form>
                         <form>
                             <h5>Nombre Padecimento</h5>
                             <div class="input-field">
-                                <input name="nom" id="EN" type="text" placeholder="Nombre del Padecimiento" class="white grey-text autocomplete">
+                                <input name="nom" id="EN" type="text" placeholder="Nombre del Padecimiento" class="white grey-text">
                             </div>
                             <h5>Qué es</h5>
                             <div class="input-field">
@@ -127,8 +127,9 @@
     CKEDITOR.replace('EJ');*/
 </script>
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="../js/SubirPad.js"></script>
+<script src="../js/auto-view.js"></script>
     <script>
         //sidenav
         const sideNav = document.querySelector('.sidenav');
@@ -141,16 +142,7 @@
             transition: 500,
             interval: 6000
         });
-        //autocomplete
-        const ac = document.querySelector('.autocomplete');
-        M.Autocomplete.init(ac,{
-            data: {
-                "Depresión": null,
-                "Ansiedad": null,
-                "Anorexia": null,
-                "Bipolar": null,
-                "TDAH": null,
-            }});
+        
         //material boxed
        /* const mb = document.querySelector('.materialboxed');
         M.Materialboxed.init(mb, {});*/
