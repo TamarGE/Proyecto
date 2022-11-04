@@ -38,7 +38,7 @@ $("#E").click(function(){
 				//window.location = "../html/Editor.html";
 				//alert ('nom=' + $("#EN").val() + '&que=' + $("#EQ").val() + '&sint=' + $("#ES").val() + '&ejer=' + $("#EJ").val());		/*
 				$("#O").html(mensaje);
-				$("#O").show(450);*/
+				$("#O").show(450);
 		/*	}else{
 				mensaje="Mensaje no enviado";
 				$("#O").show();
