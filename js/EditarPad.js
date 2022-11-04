@@ -27,24 +27,23 @@ $("#submitBtn").click(function(){
 
 // conexión con la db
 $("#E").click(function(){
-	alert ('nom=' + $("#EN").val() + '&sint=' + $("#ES").val() + '&ejer=' + $("#EJ").val());
+	//alert (CKEDITOR.instances.EQ.getData());
 	$.ajax({
 		type:'POST',
 		url: '../php/EditarPadecimiento.php',
-		dataType: "json",
-		data: 'nom=' + $("#EN").val() + '&sint=' + $("#ES").val() + '&ejer=' + $("#EJ").val(),
+		dataType: "html",
+		data: 'bus=' + $("#buscnom").val()+'&nom=' + $("#EN").val() + '&que=' + CKEDITOR.instances.EQ.getData() + '&sint=' + CKEDITOR.instances.ES.getData() + '&ejer=' + CKEDITOR.instances.EJ.getData(),
 		success: function (datos) {
-			if(datos.status == 'ok'){
-				window.location = "../html/Editor.html";
-				alert ('nom=' + $("#EN").val() + '&sint=' + $("#ES").val() + '&ejer=' + $("#EJ").val(),);
-				/*
+			//if(datos.status == 'ok'){
+				//window.location = "../html/Editor.html";
+				//alert ('nom=' + $("#EN").val() + '&que=' + $("#EQ").val() + '&sint=' + $("#ES").val() + '&ejer=' + $("#EJ").val());		/*
 				$("#O").html(mensaje);
 				$("#O").show(450);*/
-			}else{
+		/*	}else{
 				mensaje="Mensaje no enviado";
 				$("#O").show();
 			}
-
+*/
 		 },
 
 	});
