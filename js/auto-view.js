@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
         })
 
 })
-
+/*
 $("#submitBtn").click(function(){
 alert ('ViewContent.php?que='+$("#buscnom").val()+'');
     location.href ='../php/ViewContent.php?que='+$("#buscnom").val()+'';
-})
+})*/
