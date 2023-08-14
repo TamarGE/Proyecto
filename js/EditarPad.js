@@ -30,9 +30,9 @@ $("#E").click(function(){
 	//alert (CKEDITOR.instances.EQ.getData());
 	$.ajax({
 		type:'POST',
-		url: '../php/EditarPadecimiento.php',
+		url: '../php/EliminarPadecimiento.php',
 		dataType: "html",
-		data: 'bus=' + $("#buscnom").val()+'&nom=' + $("#EN").val() + '&que=' + CKEDITOR.instances.EQ.getData() + '&sint=' + CKEDITOR.instances.ES.getData() + '&ejer=' + CKEDITOR.instances.EJ.getData(),
+		data: '&nom=' + $("#EN").val() + '&que=' + $("#EQ").val() + '&sint=' + $("#ES").val() + '&ejer=' + $("#EJ").val(),
 		success: function (datos) {
 			//if(datos.status == 'ok'){
 				//window.location = "../html/Editor.html";
@@ -46,6 +46,16 @@ $("#E").click(function(){
 */
 		 },
 
+	});
+	$.ajax({
+		type:'POST',
+		url: '../php/EditarPadecimiento.php',
+		dataType: "html",
+		data: '&nom=' + $("#EN").val() + '&que=' + $("#EQ").val() + '&sint=' + $("#ES").val() + '&ejer=' + $("#EJ").val(),
+		success: function (datos) {
+			$("#O").html(mensaje);
+			$("#O").show(450);
+		 },
 	});
 });
 
