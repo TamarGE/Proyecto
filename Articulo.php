@@ -1,7 +1,7 @@
 <?php
 require_once './php/config.php';
 
-$sql = "SELECT IDpad from padecimientos where DSPad='".$_GET['que']."';";
+$sql = "SELECT IDpad from padecimientos where DSpad='".$_GET['que']."';";
 $results = mysqli_query($con, $sql);
 $pad_nombres = mysqli_num_rows($results);
 $deta = array();
