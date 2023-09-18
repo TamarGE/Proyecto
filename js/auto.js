@@ -14,6 +14,5 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 $("#submitBtn").click(function(){
-alert ('Articulo.php?que='+$("#queryInput").val()+'');
     location.href ='Articulo.php?que='+$("#queryInput").val()+'';
 })

@@ -32,6 +32,7 @@ if($("#u").val()==''&& $("#p").val()==''){
 
 // conexión con la db
 $("#E").click(function(){
+	click.preventDefault();
 	$.ajax({
 		type:'POST',
 		url: '../php/Validadmin.php',
